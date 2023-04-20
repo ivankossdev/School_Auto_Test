@@ -1,0 +1,8 @@
+C:\Users\RR\source\repos\AutoTest\AutoTest\bin\Release\AutoTest.exe.config
+C:\Users\RR\source\repos\AutoTest\AutoTest\bin\Release\AutoTest.exe
+C:\Users\RR\source\repos\AutoTest\AutoTest\bin\Release\AutoTest.pdb
+C:\Users\RR\source\repos\AutoTest\AutoTest\obj\Release\AutoTest.csproj.AssemblyReference.cache
+C:\Users\RR\source\repos\AutoTest\AutoTest\obj\Release\AutoTest.csproj.SuggestedBindingRedirects.cache
+C:\Users\RR\source\repos\AutoTest\AutoTest\obj\Release\AutoTest.csproj.CoreCompileInputs.cache
+C:\Users\RR\source\repos\AutoTest\AutoTest\obj\Release\AutoTest.exe
+C:\Users\RR\source\repos\AutoTest\AutoTest\obj\Release\AutoTest.pdb
