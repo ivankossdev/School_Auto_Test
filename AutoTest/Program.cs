@@ -21,7 +21,7 @@ namespace AutoTest
             // Console.Write("Sleep: ");
             string sleep = "1000"; //Console.ReadLine();
 
-            while (true)
+            for( ; ; )
             {
                 foreach (string s in message.StringBuilder())
                 {

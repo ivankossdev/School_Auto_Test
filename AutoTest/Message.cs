@@ -58,6 +58,7 @@ namespace AutoTest
                 $"22 августа 2022 г. 11:41:44 Запрещено Ученики {student1} {points.point_4} {IdUser()} Фамилия Имя Отчество ",
                 $"22 августа 2022 г. 11:41:44 Запрещено Ученики {student2} {points.point_4} {IdUser()} Фамилия Имя Отчество ",
                 $"22 августа 2022 г. 11:41:44 Разрешено Родители {group} {points.point_4} {IdUser()} Фамилия Имя Отчество "
+
             };
 
             return sendUsers;
@@ -66,7 +67,7 @@ namespace AutoTest
         /* Метод формирует id пользователя */
         private string IdUser()
         {
-            return $"U{random.Next(1, 1000)}";
+            return $"U{random.Next(1, 10000000)}";
         }
 
         private string Group(int count)
