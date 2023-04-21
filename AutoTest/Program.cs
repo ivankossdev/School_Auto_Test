@@ -15,8 +15,11 @@ namespace AutoTest
 
             Message message = new Message();
 
-            Console.Write("IP: ");
-            string ip = Console.ReadLine();
+            // Console.Write("IP: ");
+            string ip = "192.168.0.204"; //Console.ReadLine();
+
+            // Console.Write("Sleep: ");
+            string sleep = "1000"; //Console.ReadLine();
 
             while (true)
             {
@@ -24,7 +27,7 @@ namespace AutoTest
                 {
                     send(10500, ip.Trim(), s);
                 }
-                Thread.Sleep(5000);
+                Thread.Sleep(int.Parse(sleep));
             }
            
         }
@@ -39,14 +42,15 @@ namespace AutoTest
                 byte[] data = Encoding.UTF8.GetBytes(message);
 
 
-                StringBuilder response = new StringBuilder();
+                //StringBuilder response = new StringBuilder();
                 NetworkStream stream = client.GetStream();
 
                 stream.Write(data, 0, data.Length);
 
                 Console.WriteLine("Sent: {0}", message);
+                Thread.Sleep(100);
 
-                Console.WriteLine(response.ToString());
+                //Console.WriteLine(response.ToString());
 
                 stream.Close();
                 client.Close();
