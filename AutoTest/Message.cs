@@ -76,7 +76,7 @@ namespace AutoTest
 
             for(int i = 0; i < count; i++)
             {
-                visitors.Add($"22 августа 2022 г. 11:41:44 Запрещено Ученики {groupList[i]} {point} {IdUser()} Фамилия Имя Отчество");
+                visitors.Add($"22 августа 2022 г. 11:41:44 Запрещено Ученики {groupList[i]} {point} {IdUser()} Фамилия Имя Отчество ");
             }
             visitors.Add($"22 августа 2022 г. 11:41:44 Разрешено Родители {group} {point} {IdUser()} Фамилия Имя Отчество ");
             return visitors;
@@ -91,7 +91,7 @@ namespace AutoTest
             }
         }
 
-        public List<string> StringBulder(int count)
+        public List<string> StringBuilder(int count)
         {
             List<string> message = new List<string>();
 
