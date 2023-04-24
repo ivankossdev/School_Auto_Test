@@ -32,7 +32,7 @@ namespace AutoTest
         /* Метод создает и отправляет строку */
         static void CreateAndSendMessage()
         {
-            Message message = new Message("doors.xml");
+            Message message = new Message("doors1.xml");
 
             string ip = "192.168.0.204";
 

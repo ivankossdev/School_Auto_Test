@@ -86,9 +86,16 @@ namespace AutoTest
         {
             List<string> message = new List<string>();
 
-            foreach(string point in points)
+            if(points.Count <= 0)
             {
-                AddToMessage(VisitorList(count, point), message);
+                Console.WriteLine("Нет списка КПП.");
+            }
+            else
+            {
+                foreach (string point in points)
+                {
+                    AddToMessage(VisitorList(count, point), message);
+                }
             }
 
             return message;
