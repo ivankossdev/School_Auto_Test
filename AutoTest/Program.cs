@@ -23,7 +23,7 @@ namespace AutoTest
 
             for( ; ; )
             {
-                foreach (string s in message.StringBuilder())
+                foreach (string s in message.StringBuilder(4))
                 {
                     send(10500, ip.Trim(), s);
                 }
