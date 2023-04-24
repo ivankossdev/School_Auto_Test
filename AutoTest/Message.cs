@@ -15,23 +15,16 @@ namespace AutoTest
         /// "22 августа 2022 г. 11:41:44 Запрещено Ученики 24 КПП_2_Выезд_2 U1996882 Фамилия Имя Отчество "
         /// </summary> 
 
-        public Message() {
-            points.point_1 = "КПП_1_Въезд_1";
-            points.point_2 = "КПП_1_Въезд_2";
-            points.point_3 = "КПП_2_Выезд_1";
-            points.point_4 = "КПП_2_Выезд_2";
+        public Message(string document) {
+
+            points = xmlHandler.ReadDocument(document);
+
         }
 
-        private struct Points
-        {
-            public string point_1;
-            public string point_2;
-            public string point_3;
-            public string point_4;
-        }
 
         Random random = new Random();
-        Points points = new Points();
+        XmlHandler xmlHandler = new XmlHandler();
+        List<string> points = new List<string>();
 
 
         /* Метод формирует id пользователя */
@@ -95,10 +88,10 @@ namespace AutoTest
         {
             List<string> message = new List<string>();
 
-            AddToMessage(VisitorList(count, points.point_1), message);
-            AddToMessage(VisitorList(count, points.point_2), message);
-            AddToMessage(VisitorList(count, points.point_3), message);
-            AddToMessage(VisitorList(count, points.point_4), message);
+            foreach(string point in points)
+            {
+                AddToMessage(VisitorList(count, point), message);
+            }
 
             return message;
         }
