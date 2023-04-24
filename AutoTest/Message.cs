@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AutoTest
 {
@@ -86,9 +87,11 @@ namespace AutoTest
         {
             List<string> message = new List<string>();
 
-            if(points.Count <= 0)
+            if (points.Count <= 0)
             {
-                Console.WriteLine("Нет списка КПП.");
+                Console.WriteLine("Нет списка КПП.\nНажмите любую клавишу на клавиатуре.");
+                Console.ReadKey();
+                Environment.Exit(-1);
             }
             else
             {
