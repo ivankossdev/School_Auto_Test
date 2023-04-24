@@ -17,15 +17,13 @@ namespace AutoTest
 
         public Message(string document) {
 
-            points = xmlHandler.ReadDocument(document);
+            points = xmlHandler.GetPoinst(document);
 
         }
-
 
         Random random = new Random();
         XmlHandler xmlHandler = new XmlHandler();
         List<string> points = new List<string>();
-
 
         /* Метод формирует id пользователя */
         private string IdUser()

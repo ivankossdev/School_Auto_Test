@@ -11,7 +11,7 @@ namespace AutoTest
     internal class XmlHandler
     {
         XmlDocument doors = new XmlDocument();
-        public List<string> ReadDocument(string document)
+        public List<string> GetPoinst(string document)
         {
             doors.Load($"{Directory.GetCurrentDirectory()}\\{document}");
 
@@ -21,7 +21,6 @@ namespace AutoTest
             {
                 foreach (XmlNode childnode in xnode.ChildNodes)
                 {
-                    
                     points.Add(childnode.InnerText);
                 }
             }
