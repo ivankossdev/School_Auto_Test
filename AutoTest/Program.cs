@@ -15,24 +15,25 @@ namespace AutoTest
 
             Message message = new Message();
 
-            // Console.Write("IP: ");
-            string ip = "192.168.0.204"; //Console.ReadLine();
-
-            // Console.Write("Sleep: ");
-            string sleep = "1000"; //Console.ReadLine();
+            string ip = "192.168.0.204"; 
+            
+            string sleep = "1000"; 
 
             for( ; ; )
             {
                 foreach (string s in message.StringBuilder(4))
                 {
-                    send(10500, ip.Trim(), s);
+                    SendToSupervisor(10500, ip.Trim(), s);
                 }
                 Thread.Sleep(int.Parse(sleep));
             }
            
         }
 
-        static void send(int port, string server, string message)
+        /* Метод отправляет строку:  
+         * "22 августа 2022 г. 11:41:44 Разрешено Родители 6_62_24 КПП_2_Выезд_2 U2037693 Фамилия Имя Отчество "
+         * Программе Supervisor */
+        static void SendToSupervisor(int port, string server, string message)
         {
             try
             {
@@ -41,27 +42,23 @@ namespace AutoTest
 
                 byte[] data = Encoding.UTF8.GetBytes(message);
 
-
-                //StringBuilder response = new StringBuilder();
                 NetworkStream stream = client.GetStream();
 
                 stream.Write(data, 0, data.Length);
 
-                Console.WriteLine("Sent: {0}", message);
+                Console.WriteLine($"Sent: {message}");
                 Thread.Sleep(100);
-
-                //Console.WriteLine(response.ToString());
 
                 stream.Close();
                 client.Close();
             }
             catch (SocketException e)
             {
-                Console.WriteLine("SocketException: {0}", e);
+                Console.WriteLine($"SocketException: {e}");
             }
             catch (Exception e)
             {
-                Console.WriteLine("Exception: {0}", e.Message);
+                Console.WriteLine($"Exception: {e.Message}");
             }
 
            
