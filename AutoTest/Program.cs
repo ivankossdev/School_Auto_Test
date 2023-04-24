@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -13,13 +14,33 @@ namespace AutoTest
         static void Main(string[] args)
         {
 
+            CreateAndSendMessage();
+
+        }
+
+        /* Метод забирает IpV4 адареса локального хоста */
+        static void GetIpv4Address()
+        {
+            string host = Dns.GetHostName();
+            Console.WriteLine($"Имя компьютера: {host}");
+            IPAddress[] addresses = Dns.GetHostAddresses(host);
+            foreach (IPAddress address in addresses)
+            {
+                Console.WriteLine($"Адрес: {address.MapToIPv4()} ");
+            }
+            Console.ReadKey();
+        }
+
+        /* Метод создает и отправляет строку */
+        static void CreateAndSendMessage()
+        {
             Message message = new Message();
 
-            string ip = "192.168.0.204"; 
-            
-            string sleep = "1000"; 
+            string ip = "192.168.0.204";
 
-            for( ; ; )
+            string sleep = "1000";
+
+            for ( ; ; )
             {
                 foreach (string s in message.StringBuilder(4))
                 {
@@ -27,7 +48,6 @@ namespace AutoTest
                 }
                 Thread.Sleep(int.Parse(sleep));
             }
-           
         }
 
         /* Метод отправляет строку:  
@@ -60,8 +80,7 @@ namespace AutoTest
             {
                 Console.WriteLine($"Exception: {e.Message}");
             }
-
-           
         }
+
     }
 }
