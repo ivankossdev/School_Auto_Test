@@ -13,7 +13,10 @@ namespace AutoTest
     {
         static void Main(string[] args)
         {
-            CreateAndSendMessage();
+            XmlHandler handler = new XmlHandler();
+            handler.AddElement("doors.xml");
+
+            //CreateAndSendMessage();
         }
 
         /* Метод забирает IpV4 адареса локального хоста */
@@ -32,7 +35,7 @@ namespace AutoTest
         /* Метод создает и отправляет строку */
         static void CreateAndSendMessage()
         {
-            Message message = new Message("doors1.xml");
+            Message message = new Message("doors.xml");
 
             string ip = "192.168.0.204";
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Xml;
 using System.Net.Sockets;
+using System.Xml.Linq;
 
 namespace AutoTest
 {
@@ -37,11 +38,25 @@ namespace AutoTest
             {
                 Console.WriteLine($"Error: {e}");
             }
-            finally
-            {
-                Console.WriteLine("Нужно добавить файл doors.xml");
-            }
+
             return points;
+        }
+
+        public void AddElement(string document)
+        {
+            doors.Load($"{Directory.GetCurrentDirectory()}\\{document}");
+            XmlElement root = doors.DocumentElement;
+
+            XmlElement point = doors.CreateElement("door");
+            XmlAttribute nameAttr = doors.CreateAttribute("name");
+
+            XmlText nameText = doors.CreateTextNode("point_5");
+
+            nameAttr.AppendChild(nameText);
+
+            point.Attributes.Append(nameAttr);
+            doors.AppendChild(point);
+            doors.Save(document);
         }
     }
 }
