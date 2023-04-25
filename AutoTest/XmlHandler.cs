@@ -45,17 +45,20 @@ namespace AutoTest
         public void AddElement(string document)
         {
             doors.Load($"{Directory.GetCurrentDirectory()}\\{document}");
+
+            /* Создаем узел door */
+            XmlElement doorElement = doors.CreateElement("door");
+            XmlAttribute doorAttr = doors.CreateAttribute("name");
+            XmlText doorText = doors.CreateTextNode("point_5");
+
+            
+
             XmlElement root = doors.DocumentElement;
 
-            XmlElement point = doors.CreateElement("door");
-            XmlAttribute nameAttr = doors.CreateAttribute("name");
+            doorAttr.AppendChild(doorText);
+            doorElement.Attributes.Append(doorAttr);
+            root.AppendChild(doorElement);
 
-            XmlText nameText = doors.CreateTextNode("point_5");
-
-            nameAttr.AppendChild(nameText);
-
-            point.Attributes.Append(nameAttr);
-            doors.AppendChild(point);
             doors.Save(document);
         }
     }
