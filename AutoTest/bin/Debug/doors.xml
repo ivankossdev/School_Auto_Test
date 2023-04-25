@@ -12,6 +12,10 @@
   <door name="point_4">
     <name>КПП_2_Выезд_2</name>
   </door>
-  <door name="Mark" />
-  <door name="Point_5" />
+  <door name="point_5">
+    <name>КПП_3_Выезд_1</name>
+  </door>
+  <door name="point_5">
+    <name>1234</name>
+  </door>
 </access>

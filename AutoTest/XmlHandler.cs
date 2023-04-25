@@ -12,7 +12,7 @@ namespace AutoTest
 {
     internal class XmlHandler
     {
-        XmlDocument doors = new XmlDocument();
+        XmlDocument door = new XmlDocument();
 
         /* Метод забирает из файла XML список доступных дверей */
         public List<string> GetPoinst(string document)
@@ -20,9 +20,9 @@ namespace AutoTest
             List<string> points = new List<string>();
             try
             {
-                doors.Load($"{Directory.GetCurrentDirectory()}\\{document}");
+                door.Load($"{Directory.GetCurrentDirectory()}\\{document}");
 
-                foreach (XmlElement xnode in doors.DocumentElement)
+                foreach (XmlElement xnode in door.DocumentElement)
                 {
                     foreach (XmlNode childnode in xnode.ChildNodes)
                     {
@@ -42,24 +42,28 @@ namespace AutoTest
             return points;
         }
 
-        public void AddElement(string document)
+        public void AddElement(string document, string nameNode)
         {
-            doors.Load($"{Directory.GetCurrentDirectory()}\\{document}");
+            door.Load($"{Directory.GetCurrentDirectory()}\\{document}");
 
             /* Создаем узел door */
-            XmlElement doorElement = doors.CreateElement("door");
-            XmlAttribute doorAttr = doors.CreateAttribute("name");
-            XmlText doorText = doors.CreateTextNode("point_5");
-
-            
-
-            XmlElement root = doors.DocumentElement;
-
+            XmlElement doorElement = door.CreateElement("door");
+            XmlAttribute doorAttr = door.CreateAttribute("name");
+            XmlText doorText = door.CreateTextNode("point_5");
             doorAttr.AppendChild(doorText);
+
+            /* Создаем узел name */
+            XmlElement nameElement = door.CreateElement("name");
+            XmlText nameText = door.CreateTextNode(nameNode);
+            nameElement.AppendChild(nameText);
+
             doorElement.Attributes.Append(doorAttr);
+            doorElement.AppendChild(nameElement);
+
+            XmlElement root = door.DocumentElement;
             root.AppendChild(doorElement);
 
-            doors.Save(document);
+            door.Save(document);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace AutoTest
         static void Main(string[] args)
         {
             XmlHandler handler = new XmlHandler();
-            handler.AddElement("doors.xml");
+            handler.AddElement("doors.xml", "1234");
 
             //CreateAndSendMessage();
         }
