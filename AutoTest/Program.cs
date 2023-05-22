@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace AutoTest
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            XmlHandler handler = new XmlHandler();
-            handler.AddElement("doors.xml", "1234");
+            //XmlHandler handler = new XmlHandler();
+            //handler.AddElement("doors.xml", "1234");
 
-            //CreateAndSendMessage();
+            CreateAndSendMessage();
         }
 
         /* Метод забирает IpV4 адареса локального хоста */
@@ -54,7 +54,7 @@ namespace AutoTest
         /* Метод отправляет строку:  
          * "22 августа 2022 г. 11:41:44 Разрешено Родители 6_62_24 КПП_2_Выезд_2 U2037693 Фамилия Имя Отчество "
          * Программе Supervisor */
-        static void SendToSupervisor(int port, string server, string message)
+        public static void SendToSupervisor(int port, string server, string message,bool commandLine=true)
         {
             try
             {
@@ -66,8 +66,10 @@ namespace AutoTest
                 NetworkStream stream = client.GetStream();
 
                 stream.Write(data, 0, data.Length);
-
-                Console.WriteLine($"Sent: {message}");
+                if (commandLine ) {
+                    Console.WriteLine($"Sent: {message}");
+                }
+               
                 Thread.Sleep(100);
 
                 stream.Close();

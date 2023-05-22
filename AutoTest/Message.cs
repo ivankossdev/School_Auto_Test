@@ -7,7 +7,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace AutoTest
 {
-    internal class Message
+    public class Message
     {
         /// <summary>
         /// Класс генерирует строку для отправки программе Evidence-Supervisor
@@ -89,8 +89,8 @@ namespace AutoTest
 
             if (points.Count <= 0)
             {
-                Console.WriteLine("Нет списка КПП.\nНажмите любую клавишу на клавиатуре.");
-                Console.ReadKey();
+                //Console.WriteLine("Нет списка КПП.\nНажмите любую клавишу на клавиатуре.");
+               // Console.ReadKey();
                 Environment.Exit(-1);
             }
             else
