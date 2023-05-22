@@ -33,6 +33,7 @@
             this.labelIpAddress = new System.Windows.Forms.Label();
             this.textBoxIpAddr = new System.Windows.Forms.TextBox();
             this.backSender = new System.ComponentModel.BackgroundWorker();
+            this.checkBoxBlockUser = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // buttonSend
@@ -72,11 +73,22 @@
             this.backSender.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backSender_ProgressChanged);
             this.backSender.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backSender_RunWorkerCompleted);
             // 
+            // checkBoxBlockUser
+            // 
+            this.checkBoxBlockUser.AutoSize = true;
+            this.checkBoxBlockUser.Location = new System.Drawing.Point(12, 144);
+            this.checkBoxBlockUser.Name = "checkBoxBlockUser";
+            this.checkBoxBlockUser.Size = new System.Drawing.Size(99, 17);
+            this.checkBoxBlockUser.TabIndex = 3;
+            this.checkBoxBlockUser.Text = "Заблокирован";
+            this.checkBoxBlockUser.UseVisualStyleBackColor = true;
+            // 
             // Sender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 173);
+            this.Controls.Add(this.checkBoxBlockUser);
             this.Controls.Add(this.textBoxIpAddr);
             this.Controls.Add(this.labelIpAddress);
             this.Controls.Add(this.buttonSend);
@@ -93,6 +105,7 @@
         private System.Windows.Forms.Label labelIpAddress;
         private System.Windows.Forms.TextBox textBoxIpAddr;
         private System.ComponentModel.BackgroundWorker backSender;
+        private System.Windows.Forms.CheckBox checkBoxBlockUser;
     }
 }
 

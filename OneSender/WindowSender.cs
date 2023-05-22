@@ -24,7 +24,6 @@ namespace OneSender
         {
             if (backSender.IsBusy != true)
                 backSender.RunWorkerAsync();
-            
         }
 
         int i = 0;
@@ -35,7 +34,7 @@ namespace OneSender
         {
             BackgroundWorker worker = sender as BackgroundWorker;
 
-            foreach (string s in message.StringBuilder(4))
+            foreach (string s in message.StringBuilder(4, checkBoxBlockUser.Checked))
             {
                 report = $" {AutoTest.Program.SendToSupervisor(10500, "192.168.0.204", s, false)}\n";
                 worker.ReportProgress(i++);
@@ -45,11 +44,16 @@ namespace OneSender
         private void backSender_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             textBoxIpAddr.AppendText(e.ProgressPercentage.ToString() + report);
+            if (i > 100)
+            {
+                i = 0;
+                textBoxIpAddr.Clear();
+            }
         }
 
         private void backSender_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-
+            textBoxIpAddr.AppendText("Завершено");
         }
     }
 }

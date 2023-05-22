@@ -60,7 +60,7 @@ namespace AutoTest
         }
 
         /* Метод формирует строку из сопровождающих и учащихся */
-        private List<string> VisitorList(int count, string point)
+        private List<string> VisitorList(int count, string point, bool blockUser=false)
         {
             List<string> visitors = new List<string>();
             string group = Group(count);
@@ -71,6 +71,10 @@ namespace AutoTest
                 visitors.Add($"22 августа 2022 г. 11:41:44 Запрещено Ученики {groupList[i]} {point} {IdUser()} Фамилия Имя Отчество ");
             }
             visitors.Add($"22 августа 2022 г. 11:41:44 Разрешено Родители {group} {point} {IdUser()} Фамилия Имя Отчество ");
+            if( blockUser)
+            {
+                visitors.Add($"22 августа 2022 г. 11:41:44 Заблокирован Родители {group} {point} {IdUser()} Фамилия Имя Отчество ");
+            }
             return visitors;
         }
 
@@ -83,7 +87,7 @@ namespace AutoTest
             }
         }
 
-        public List<string> StringBuilder(int count)
+        public List<string> StringBuilder(int count, bool blockUser=false)
         {
             List<string> message = new List<string>();
 
@@ -97,7 +101,7 @@ namespace AutoTest
             {
                 foreach (string point in points)
                 {
-                    AddToMessage(VisitorList(count, point), message);
+                    AddToMessage(VisitorList(count, point,blockUser), message);
                 }
             }
 
