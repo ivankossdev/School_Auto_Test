@@ -39,7 +39,7 @@ namespace AutoTest
             string group = "";
             for(int i = 0; i < count; i++)
             {
-                group += $"{random.Next(1, 100).ToString()}_";
+                group += $"{random.Next(1, 100)}_";
             }
 
             return group.TrimEnd('_');

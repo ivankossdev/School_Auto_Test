@@ -20,7 +20,7 @@ namespace AutoTest
         }
 
         /* Метод забирает IpV4 адареса локального хоста */
-        static void GetIpv4Address()
+        public static void GetIpv4Address()
         {
             string host = Dns.GetHostName();
             Console.WriteLine($"Имя компьютера: {host}");
@@ -54,7 +54,7 @@ namespace AutoTest
         /* Метод отправляет строку:  
          * "22 августа 2022 г. 11:41:44 Разрешено Родители 6_62_24 КПП_2_Выезд_2 U2037693 Фамилия Имя Отчество "
          * Программе Supervisor */
-        public static void SendToSupervisor(int port, string server, string message,bool commandLine=true)
+        public static string SendToSupervisor(int port, string server, string message,bool commandLine=true)
         {
             try
             {
@@ -83,6 +83,8 @@ namespace AutoTest
             {
                 Console.WriteLine($"Exception: {e.Message}");
             }
+
+            return message;
         }
 
     }

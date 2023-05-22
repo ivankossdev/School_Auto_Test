@@ -32,11 +32,12 @@
             this.buttonSend = new System.Windows.Forms.Button();
             this.labelIpAddress = new System.Windows.Forms.Label();
             this.textBoxIpAddr = new System.Windows.Forms.TextBox();
+            this.backSender = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // buttonSend
             // 
-            this.buttonSend.Location = new System.Drawing.Point(168, 55);
+            this.buttonSend.Location = new System.Drawing.Point(616, 138);
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.Size = new System.Drawing.Size(75, 23);
             this.buttonSend.TabIndex = 0;
@@ -49,22 +50,33 @@
             this.labelIpAddress.AutoSize = true;
             this.labelIpAddress.Location = new System.Drawing.Point(13, 13);
             this.labelIpAddress.Name = "labelIpAddress";
-            this.labelIpAddress.Size = new System.Drawing.Size(50, 13);
+            this.labelIpAddress.Size = new System.Drawing.Size(123, 13);
             this.labelIpAddress.TabIndex = 1;
-            this.labelIpAddress.Text = "IP адрес";
+            this.labelIpAddress.Text = "Отправленные данные";
             // 
             // textBoxIpAddr
             // 
             this.textBoxIpAddr.Location = new System.Drawing.Point(12, 29);
+            this.textBoxIpAddr.Multiline = true;
             this.textBoxIpAddr.Name = "textBoxIpAddr";
-            this.textBoxIpAddr.Size = new System.Drawing.Size(231, 20);
+            this.textBoxIpAddr.ReadOnly = true;
+            this.textBoxIpAddr.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxIpAddr.Size = new System.Drawing.Size(679, 103);
             this.textBoxIpAddr.TabIndex = 2;
+            // 
+            // backSender
+            // 
+            this.backSender.WorkerReportsProgress = true;
+            this.backSender.WorkerSupportsCancellation = true;
+            this.backSender.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backSender_DoWork);
+            this.backSender.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backSender_ProgressChanged);
+            this.backSender.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backSender_RunWorkerCompleted);
             // 
             // Sender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(255, 93);
+            this.ClientSize = new System.Drawing.Size(703, 173);
             this.Controls.Add(this.textBoxIpAddr);
             this.Controls.Add(this.labelIpAddress);
             this.Controls.Add(this.buttonSend);
@@ -80,6 +92,7 @@
         private System.Windows.Forms.Button buttonSend;
         private System.Windows.Forms.Label labelIpAddress;
         private System.Windows.Forms.TextBox textBoxIpAddr;
+        private System.ComponentModel.BackgroundWorker backSender;
     }
 }
 
