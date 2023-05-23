@@ -34,9 +34,9 @@ namespace OneSender
         {
             BackgroundWorker worker = sender as BackgroundWorker;
 
-            foreach (string s in message.StringBuilder(4, checkBoxBlockUser.Checked))
+            foreach (string s in message.StringBuilder((int)childrenNum.Value, checkBoxBlockUser.Checked))
             {
-                report = $" {AutoTest.Program.SendToSupervisor(10500, "192.168.0.204", s, false)}\n";
+                report = $". {AutoTest.Program.SendToSupervisor(10500, "192.168.0.204", s, false)}\n";
                 worker.ReportProgress(i++);
             }
         }

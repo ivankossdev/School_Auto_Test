@@ -34,6 +34,11 @@
             this.textBoxIpAddr = new System.Windows.Forms.TextBox();
             this.backSender = new System.ComponentModel.BackgroundWorker();
             this.checkBoxBlockUser = new System.Windows.Forms.CheckBox();
+            this.childrenNum = new System.Windows.Forms.NumericUpDown();
+            this.boxSittings = new System.Windows.Forms.GroupBox();
+            this.labelUser = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.childrenNum)).BeginInit();
+            this.boxSittings.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonSend
@@ -76,24 +81,60 @@
             // checkBoxBlockUser
             // 
             this.checkBoxBlockUser.AutoSize = true;
-            this.checkBoxBlockUser.Location = new System.Drawing.Point(12, 144);
+            this.checkBoxBlockUser.Location = new System.Drawing.Point(8, 19);
             this.checkBoxBlockUser.Name = "checkBoxBlockUser";
             this.checkBoxBlockUser.Size = new System.Drawing.Size(99, 17);
             this.checkBoxBlockUser.TabIndex = 3;
             this.checkBoxBlockUser.Text = "Заблокирован";
             this.checkBoxBlockUser.UseVisualStyleBackColor = true;
             // 
+            // childrenNum
+            // 
+            this.childrenNum.Location = new System.Drawing.Point(113, 19);
+            this.childrenNum.Name = "childrenNum";
+            this.childrenNum.Size = new System.Drawing.Size(50, 20);
+            this.childrenNum.TabIndex = 4;
+            this.childrenNum.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            // 
+            // boxSittings
+            // 
+            this.boxSittings.Controls.Add(this.labelUser);
+            this.boxSittings.Controls.Add(this.checkBoxBlockUser);
+            this.boxSittings.Controls.Add(this.childrenNum);
+            this.boxSittings.Location = new System.Drawing.Point(12, 138);
+            this.boxSittings.Name = "boxSittings";
+            this.boxSittings.Size = new System.Drawing.Size(278, 48);
+            this.boxSittings.TabIndex = 5;
+            this.boxSittings.TabStop = false;
+            this.boxSittings.Text = "Настройки";
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Location = new System.Drawing.Point(169, 21);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(50, 13);
+            this.labelUser.TabIndex = 5;
+            this.labelUser.Text = "Ученики";
+            // 
             // Sender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 173);
-            this.Controls.Add(this.checkBoxBlockUser);
+            this.ClientSize = new System.Drawing.Size(703, 198);
+            this.Controls.Add(this.boxSittings);
             this.Controls.Add(this.textBoxIpAddr);
             this.Controls.Add(this.labelIpAddress);
             this.Controls.Add(this.buttonSend);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Sender";
+            ((System.ComponentModel.ISupportInitialize)(this.childrenNum)).EndInit();
+            this.boxSittings.ResumeLayout(false);
+            this.boxSittings.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,6 +147,9 @@
         private System.Windows.Forms.TextBox textBoxIpAddr;
         private System.ComponentModel.BackgroundWorker backSender;
         private System.Windows.Forms.CheckBox checkBoxBlockUser;
+        private System.Windows.Forms.NumericUpDown childrenNum;
+        private System.Windows.Forms.GroupBox boxSittings;
+        private System.Windows.Forms.Label labelUser;
     }
 }
 
