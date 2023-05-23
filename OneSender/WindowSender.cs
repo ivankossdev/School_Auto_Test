@@ -58,8 +58,6 @@ namespace OneSender
                     worker.ReportProgress(i++);
                 }
             }
-
-
         }
 
         private void backSender_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -77,12 +75,11 @@ namespace OneSender
             textBoxIpAddr.AppendText("Завершено");
         }
 
-        
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedState = comboBox1.SelectedItem.ToString();
-            MessageBox.Show(selectedState);
+            buttonSend.Focus();
+            //MessageBox.Show(selectedState);
         }
 
         private void checkBoxAllPoints_CheckedChanged(object sender, EventArgs e)
