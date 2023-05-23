@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace OneSender
 {
@@ -18,6 +19,11 @@ namespace OneSender
         public Sender()
         {
             InitializeComponent();
+
+            foreach(var item in message.points)
+            {
+                comboBox1.Items.Add(item);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,6 +60,12 @@ namespace OneSender
         private void backSender_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             textBoxIpAddr.AppendText("Завершено");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedState = comboBox1.SelectedItem.ToString();
+            MessageBox.Show(selectedState);
         }
     }
 }

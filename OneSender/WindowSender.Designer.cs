@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sender));
             this.buttonSend = new System.Windows.Forms.Button();
             this.labelIpAddress = new System.Windows.Forms.Label();
@@ -37,8 +38,12 @@
             this.childrenNum = new System.Windows.Forms.NumericUpDown();
             this.boxSittings = new System.Windows.Forms.GroupBox();
             this.labelUser = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.senderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.checkBoxAllPoints = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.childrenNum)).BeginInit();
             this.boxSittings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.senderBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSend
@@ -90,7 +95,7 @@
             // 
             // childrenNum
             // 
-            this.childrenNum.Location = new System.Drawing.Point(113, 19);
+            this.childrenNum.Location = new System.Drawing.Point(8, 42);
             this.childrenNum.Name = "childrenNum";
             this.childrenNum.Size = new System.Drawing.Size(50, 20);
             this.childrenNum.TabIndex = 4;
@@ -102,12 +107,14 @@
             // 
             // boxSittings
             // 
+            this.boxSittings.Controls.Add(this.checkBoxAllPoints);
+            this.boxSittings.Controls.Add(this.comboBox1);
             this.boxSittings.Controls.Add(this.labelUser);
             this.boxSittings.Controls.Add(this.checkBoxBlockUser);
             this.boxSittings.Controls.Add(this.childrenNum);
             this.boxSittings.Location = new System.Drawing.Point(12, 138);
             this.boxSittings.Name = "boxSittings";
-            this.boxSittings.Size = new System.Drawing.Size(278, 48);
+            this.boxSittings.Size = new System.Drawing.Size(365, 72);
             this.boxSittings.TabIndex = 5;
             this.boxSittings.TabStop = false;
             this.boxSittings.Text = "Настройки";
@@ -115,17 +122,41 @@
             // labelUser
             // 
             this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(169, 21);
+            this.labelUser.Location = new System.Drawing.Point(57, 44);
             this.labelUser.Name = "labelUser";
             this.labelUser.Size = new System.Drawing.Size(50, 13);
             this.labelUser.TabIndex = 5;
             this.labelUser.Text = "Ученики";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(113, 44);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(103, 21);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.Text = "КПП";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // senderBindingSource
+            // 
+            this.senderBindingSource.DataSource = typeof(OneSender.Sender);
+            // 
+            // checkBoxAllPoints
+            // 
+            this.checkBoxAllPoints.AutoSize = true;
+            this.checkBoxAllPoints.Location = new System.Drawing.Point(113, 19);
+            this.checkBoxAllPoints.Name = "checkBoxAllPoints";
+            this.checkBoxAllPoints.Size = new System.Drawing.Size(103, 17);
+            this.checkBoxAllPoints.TabIndex = 7;
+            this.checkBoxAllPoints.Text = "Все проходные";
+            this.checkBoxAllPoints.UseVisualStyleBackColor = true;
+            // 
             // Sender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 198);
+            this.ClientSize = new System.Drawing.Size(703, 224);
             this.Controls.Add(this.boxSittings);
             this.Controls.Add(this.textBoxIpAddr);
             this.Controls.Add(this.labelIpAddress);
@@ -135,6 +166,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.childrenNum)).EndInit();
             this.boxSittings.ResumeLayout(false);
             this.boxSittings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.senderBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,6 +182,9 @@
         private System.Windows.Forms.NumericUpDown childrenNum;
         private System.Windows.Forms.GroupBox boxSittings;
         private System.Windows.Forms.Label labelUser;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource senderBindingSource;
+        private System.Windows.Forms.CheckBox checkBoxAllPoints;
     }
 }
 
