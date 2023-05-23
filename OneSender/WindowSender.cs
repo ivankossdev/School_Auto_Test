@@ -36,15 +36,30 @@ namespace OneSender
 
         string report = string.Empty;
 
+        string selectedState = string.Empty;
+
         private void backSender_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
 
-            foreach (string s in message.StringBuilder((int)childrenNum.Value, checkBoxBlockUser.Checked))
+            if (checkBoxAllPoints.Checked)
             {
-                report = $". {AutoTest.Program.SendToSupervisor(10500, "192.168.0.204", s, false)}\n";
-                worker.ReportProgress(i++);
+                foreach (string s in message.StringBuilder((int)childrenNum.Value, checkBoxBlockUser.Checked))
+                {
+                    report = $". {AutoTest.Program.SendToSupervisor(10500, "192.168.0.204", s, false)}\n";
+                    worker.ReportProgress(i++);
+                }
             }
+            else
+            {
+                foreach (string s in message.OneKppMessqge((int)childrenNum.Value, selectedState, checkBoxBlockUser.Checked))
+                {
+                    report = $". {AutoTest.Program.SendToSupervisor(10500, "192.168.0.204", s, false)}\n";
+                    worker.ReportProgress(i++);
+                }
+            }
+
+
         }
 
         private void backSender_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -62,9 +77,11 @@ namespace OneSender
             textBoxIpAddr.AppendText("Завершено");
         }
 
+        
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedState = comboBox1.SelectedItem.ToString();
+            selectedState = comboBox1.SelectedItem.ToString();
             MessageBox.Show(selectedState);
         }
 

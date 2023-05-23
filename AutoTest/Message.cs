@@ -86,25 +86,30 @@ namespace AutoTest
             }
         }
 
+        /* Метод собирает массив строк */
         public List<string> StringBuilder(int count, bool blockUser=false)
         {
             List<string> message = new List<string>();
 
             if (points.Count <= 0)
             {
-                //Console.WriteLine("Нет списка КПП.\nНажмите любую клавишу на клавиатуре.");
-               // Console.ReadKey();
                 Environment.Exit(-1);
             }
             else
             {
                 foreach (string point in points)
                 {
-                    AddToMessage(VisitorList(count, point,blockUser), message);
+                    AddToMessage(VisitorList(count, point, blockUser), message);
                 }
             }
 
             return message;
+        }
+
+        /* Формирование строк для одной КПП */
+        public List<string> OneKppMessqge(int count, string point, bool blockUser = false)
+        {
+            return VisitorList(count, point, blockUser);
         }
     }
 }

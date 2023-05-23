@@ -114,7 +114,7 @@
             this.boxSittings.Controls.Add(this.childrenNum);
             this.boxSittings.Location = new System.Drawing.Point(12, 138);
             this.boxSittings.Name = "boxSittings";
-            this.boxSittings.Size = new System.Drawing.Size(365, 72);
+            this.boxSittings.Size = new System.Drawing.Size(365, 74);
             this.boxSittings.TabIndex = 5;
             this.boxSittings.TabStop = false;
             this.boxSittings.Text = "Настройки";
@@ -132,7 +132,7 @@
             // 
             this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(113, 44);
+            this.comboBox1.Location = new System.Drawing.Point(113, 41);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(103, 21);
             this.comboBox1.TabIndex = 6;
