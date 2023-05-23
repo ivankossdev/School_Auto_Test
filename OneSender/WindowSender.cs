@@ -67,5 +67,13 @@ namespace OneSender
             string selectedState = comboBox1.SelectedItem.ToString();
             MessageBox.Show(selectedState);
         }
+
+        private void checkBoxAllPoints_CheckedChanged(object sender, EventArgs e)
+        {
+           if (checkBoxAllPoints.Checked)
+                comboBox1.Enabled = false;
+           else 
+                comboBox1.Enabled = true;
+        }
     }
 }

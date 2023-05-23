@@ -39,8 +39,8 @@
             this.boxSittings = new System.Windows.Forms.GroupBox();
             this.labelUser = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.senderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.checkBoxAllPoints = new System.Windows.Forms.CheckBox();
+            this.senderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.childrenNum)).BeginInit();
             this.boxSittings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.senderBindingSource)).BeginInit();
@@ -130,6 +130,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(113, 44);
             this.comboBox1.Name = "comboBox1";
@@ -138,19 +139,22 @@
             this.comboBox1.Text = "КПП";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // senderBindingSource
-            // 
-            this.senderBindingSource.DataSource = typeof(OneSender.Sender);
-            // 
             // checkBoxAllPoints
             // 
             this.checkBoxAllPoints.AutoSize = true;
+            this.checkBoxAllPoints.Checked = true;
+            this.checkBoxAllPoints.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxAllPoints.Location = new System.Drawing.Point(113, 19);
             this.checkBoxAllPoints.Name = "checkBoxAllPoints";
             this.checkBoxAllPoints.Size = new System.Drawing.Size(103, 17);
             this.checkBoxAllPoints.TabIndex = 7;
             this.checkBoxAllPoints.Text = "Все проходные";
             this.checkBoxAllPoints.UseVisualStyleBackColor = true;
+            this.checkBoxAllPoints.CheckedChanged += new System.EventHandler(this.checkBoxAllPoints_CheckedChanged);
+            // 
+            // senderBindingSource
+            // 
+            this.senderBindingSource.DataSource = typeof(OneSender.Sender);
             // 
             // Sender
             // 
