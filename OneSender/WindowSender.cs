@@ -19,8 +19,9 @@ namespace OneSender
         public Sender()
         {
             InitializeComponent();
+            message.fio = "Фамилия Имя Отчество ";
 
-            foreach(var item in message.points)
+            foreach (var item in message.points)
             {
                 comboBox1.Items.Add(item);
             }
@@ -33,9 +34,7 @@ namespace OneSender
         }
 
         int i = 0;
-
         string report = string.Empty;
-
         string selectedState = string.Empty;
 
         private void backSender_DoWork(object sender, DoWorkEventArgs e)
@@ -44,7 +43,7 @@ namespace OneSender
 
             if (checkBoxAllPoints.Checked)
             {
-                foreach (string s in message.StringBuilder((int)childrenNum.Value, checkBoxBlockUser.Checked))
+                foreach (string s in message.AllKppMessage((int)childrenNum.Value, checkBoxBlockUser.Checked))
                 {
                     report = $". {AutoTest.Program.SendToSupervisor(10500, "192.168.0.204", s, false)}\n";
                     worker.ReportProgress(i++);
@@ -72,7 +71,7 @@ namespace OneSender
 
         private void backSender_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            textBoxIpAddr.AppendText("Завершено");
+            textBoxIpAddr.AppendText("Завершено\n");
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -88,6 +87,14 @@ namespace OneSender
                 comboBox1.Enabled = false;
            else 
                 comboBox1.Enabled = true;
+        }
+
+        private void checkBoxFio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxFio.Checked)
+                message.fio = "Фамилия Имя Отчество ";
+            else
+                message.fio = string.Empty;
         }
     }
 }

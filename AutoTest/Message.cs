@@ -58,6 +58,10 @@ namespace AutoTest
             return gr;
         }
 
+        public string fio = string.Empty;
+
+        
+
         /* Метод формирует строку из сопровождающих и учащихся */
         private List<string> VisitorList(int count, string point, bool blockUser=false)
         {
@@ -67,12 +71,12 @@ namespace AutoTest
 
             for(int i = 0; i < count; i++)
             {
-                visitors.Add($"22 августа 2022 г. 11:41:44 Запрещено Ученики {groupList[i]} {point} {IdUser()} Фамилия Имя Отчество ");
+                visitors.Add($"22 августа 2022 г. 11:41:44 Запрещено Ученики {groupList[i]} {point} {IdUser()} {fio}");
             }
-            visitors.Add($"22 августа 2022 г. 11:41:44 Разрешено Родители {group} {point} {IdUser()} Фамилия Имя Отчество ");
-            if( blockUser)
+            visitors.Add($"22 августа 2022 г. 11:41:44 Разрешено Родители {group} {point} {IdUser()} {fio}");
+            if(blockUser)
             {
-                visitors.Add($"22 августа 2022 г. 11:41:44 Заблокирован Родители {group} {point} {IdUser()} Фамилия Имя Отчество ");
+                visitors.Add($"22 августа 2022 г. 11:41:44 Заблокирован Родители {group} {point} {IdUser()} {fio}");
             }
             return visitors;
         }
@@ -87,7 +91,7 @@ namespace AutoTest
         }
 
         /* Метод собирает массив строк */
-        public List<string> StringBuilder(int count, bool blockUser=false)
+        public List<string> AllKppMessage(int count, bool blockUser=false)
         {
             List<string> message = new List<string>();
 

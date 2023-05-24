@@ -37,10 +37,11 @@
             this.checkBoxBlockUser = new System.Windows.Forms.CheckBox();
             this.childrenNum = new System.Windows.Forms.NumericUpDown();
             this.boxSittings = new System.Windows.Forms.GroupBox();
-            this.labelUser = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.checkBoxAllPoints = new System.Windows.Forms.CheckBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.labelUser = new System.Windows.Forms.Label();
             this.senderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.checkBoxFio = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.childrenNum)).BeginInit();
             this.boxSittings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.senderBindingSource)).BeginInit();
@@ -107,6 +108,7 @@
             // 
             // boxSittings
             // 
+            this.boxSittings.Controls.Add(this.checkBoxFio);
             this.boxSittings.Controls.Add(this.checkBoxAllPoints);
             this.boxSittings.Controls.Add(this.comboBox1);
             this.boxSittings.Controls.Add(this.labelUser);
@@ -118,26 +120,6 @@
             this.boxSittings.TabIndex = 5;
             this.boxSittings.TabStop = false;
             this.boxSittings.Text = "Настройки";
-            // 
-            // labelUser
-            // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(57, 44);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(50, 13);
-            this.labelUser.TabIndex = 5;
-            this.labelUser.Text = "Ученики";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(113, 41);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(103, 21);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.Text = "КПП";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // checkBoxAllPoints
             // 
@@ -152,9 +134,42 @@
             this.checkBoxAllPoints.UseVisualStyleBackColor = true;
             this.checkBoxAllPoints.CheckedChanged += new System.EventHandler(this.checkBoxAllPoints_CheckedChanged);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Enabled = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(113, 41);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(103, 21);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.Text = "КПП";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Location = new System.Drawing.Point(57, 44);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(50, 13);
+            this.labelUser.TabIndex = 5;
+            this.labelUser.Text = "Ученики";
+            // 
             // senderBindingSource
             // 
             this.senderBindingSource.DataSource = typeof(OneSender.Sender);
+            // 
+            // checkBoxFio
+            // 
+            this.checkBoxFio.AutoSize = true;
+            this.checkBoxFio.Checked = true;
+            this.checkBoxFio.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxFio.Location = new System.Drawing.Point(222, 19);
+            this.checkBoxFio.Name = "checkBoxFio";
+            this.checkBoxFio.Size = new System.Drawing.Size(62, 17);
+            this.checkBoxFio.TabIndex = 8;
+            this.checkBoxFio.Text = "Ф.И.О.";
+            this.checkBoxFio.UseVisualStyleBackColor = true;
+            this.checkBoxFio.CheckedChanged += new System.EventHandler(this.checkBoxFio_CheckedChanged);
             // 
             // Sender
             // 
@@ -166,7 +181,12 @@
             this.Controls.Add(this.labelIpAddress);
             this.Controls.Add(this.buttonSend);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(719, 263);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(719, 263);
             this.Name = "Sender";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.childrenNum)).EndInit();
             this.boxSittings.ResumeLayout(false);
             this.boxSittings.PerformLayout();
@@ -189,6 +209,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource senderBindingSource;
         private System.Windows.Forms.CheckBox checkBoxAllPoints;
+        private System.Windows.Forms.CheckBox checkBoxFio;
     }
 }
 

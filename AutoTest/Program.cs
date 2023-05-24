@@ -43,7 +43,7 @@ namespace AutoTest
 
             for ( ; ; )
             {
-                foreach (string s in message.StringBuilder(4))
+                foreach (string s in message.AllKppMessage(4))
                 {
                     SendToSupervisor(10500, ip.Trim(), s);
                 }
