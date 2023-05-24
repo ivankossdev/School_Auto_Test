@@ -73,11 +73,12 @@ namespace AutoTest
             {
                 visitors.Add($"22 августа 2022 г. 11:41:44 Запрещено Ученики {groupList[i]} {point} {IdUser()} {fio}");
             }
-            visitors.Add($"22 августа 2022 г. 11:41:44 Разрешено Родители {group} {point} {IdUser()} {fio}");
+            
             if(blockUser)
-            {
                 visitors.Add($"22 августа 2022 г. 11:41:44 Заблокирован Родители {group} {point} {IdUser()} {fio}");
-            }
+            else
+                visitors.Add($"22 августа 2022 г. 11:41:44 Разрешено Родители {group} {point} {IdUser()} {fio}");
+
             return visitors;
         }
 
