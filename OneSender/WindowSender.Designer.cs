@@ -37,11 +37,11 @@
             this.checkBoxBlockUser = new System.Windows.Forms.CheckBox();
             this.childrenNum = new System.Windows.Forms.NumericUpDown();
             this.boxSittings = new System.Windows.Forms.GroupBox();
+            this.checkBoxFio = new System.Windows.Forms.CheckBox();
             this.checkBoxAllPoints = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelUser = new System.Windows.Forms.Label();
             this.senderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.checkBoxFio = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.childrenNum)).BeginInit();
             this.boxSittings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.senderBindingSource)).BeginInit();
@@ -121,6 +121,19 @@
             this.boxSittings.TabStop = false;
             this.boxSittings.Text = "Настройки";
             // 
+            // checkBoxFio
+            // 
+            this.checkBoxFio.AutoSize = true;
+            this.checkBoxFio.Checked = true;
+            this.checkBoxFio.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxFio.Location = new System.Drawing.Point(222, 19);
+            this.checkBoxFio.Name = "checkBoxFio";
+            this.checkBoxFio.Size = new System.Drawing.Size(62, 17);
+            this.checkBoxFio.TabIndex = 8;
+            this.checkBoxFio.Text = "Ф.И.О.";
+            this.checkBoxFio.UseVisualStyleBackColor = true;
+            this.checkBoxFio.CheckedChanged += new System.EventHandler(this.checkBoxFio_CheckedChanged);
+            // 
             // checkBoxAllPoints
             // 
             this.checkBoxAllPoints.AutoSize = true;
@@ -158,19 +171,6 @@
             // 
             this.senderBindingSource.DataSource = typeof(OneSender.Sender);
             // 
-            // checkBoxFio
-            // 
-            this.checkBoxFio.AutoSize = true;
-            this.checkBoxFio.Checked = true;
-            this.checkBoxFio.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxFio.Location = new System.Drawing.Point(222, 19);
-            this.checkBoxFio.Name = "checkBoxFio";
-            this.checkBoxFio.Size = new System.Drawing.Size(62, 17);
-            this.checkBoxFio.TabIndex = 8;
-            this.checkBoxFio.Text = "Ф.И.О.";
-            this.checkBoxFio.UseVisualStyleBackColor = true;
-            this.checkBoxFio.CheckedChanged += new System.EventHandler(this.checkBoxFio_CheckedChanged);
-            // 
             // Sender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,6 +187,7 @@
             this.MinimumSize = new System.Drawing.Size(719, 263);
             this.Name = "Sender";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Supervisor Tester";
             ((System.ComponentModel.ISupportInitialize)(this.childrenNum)).EndInit();
             this.boxSittings.ResumeLayout(false);
             this.boxSittings.PerformLayout();

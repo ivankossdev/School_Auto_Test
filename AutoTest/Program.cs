@@ -19,9 +19,12 @@ namespace AutoTest
             CreateAndSendMessage();
         }
 
-        /* Метод забирает IpV4 адареса локального хоста */
         public static void GetIpv4Address()
         {
+
+            ///
+            /// Метод забирает IpV4 адареса локального хоста
+            ///
             string host = Dns.GetHostName();
             Console.WriteLine($"Имя компьютера: {host}");
             IPAddress[] addresses = Dns.GetHostAddresses(host);
@@ -32,9 +35,12 @@ namespace AutoTest
             Console.ReadKey();
         }
 
-        /* Метод создает и отправляет строку */
         static void CreateAndSendMessage()
         {
+            ///
+            /// Метод создает и отправляет строку
+            ///
+
             Message message = new Message("doors.xml");
 
             string ip = "192.168.0.204";
@@ -51,11 +57,13 @@ namespace AutoTest
             }
         }
 
-        /* Метод отправляет строку:  
-         * "22 августа 2022 г. 11:41:44 Разрешено Родители 6_62_24 КПП_2_Выезд_2 U2037693 Фамилия Имя Отчество "
-         * Программе Supervisor */
+
         public static string SendToSupervisor(int port, string server, string message, bool commandLine=true)
         {
+            /// Метод отправляет строку:  
+            /// "22 августа 2022 г. 11:41:44 Разрешено Родители 6_62_24 КПП_2_Выезд_2 U2037693 Фамилия Имя Отчество "
+            /// Программе Supervisor 
+
             try
             {
                 TcpClient client = new TcpClient();
@@ -86,6 +94,5 @@ namespace AutoTest
 
             return message;
         }
-
     }
 }
