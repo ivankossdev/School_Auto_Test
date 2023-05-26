@@ -22,9 +22,10 @@ namespace AutoTest
         public static void GetIpv4Address()
         {
 
-            ///
+            /// <summary>
             /// Метод забирает IpV4 адареса локального хоста
-            ///
+            /// </summary> 
+           
             string host = Dns.GetHostName();
             Console.WriteLine($"Имя компьютера: {host}");
             IPAddress[] addresses = Dns.GetHostAddresses(host);
@@ -37,9 +38,9 @@ namespace AutoTest
 
         static void CreateAndSendMessage()
         {
-            ///
+            /// <summary> 
             /// Метод создает и отправляет строку
-            ///
+            /// </summary> 
 
             Message message = new Message("doors.xml");
 
@@ -60,9 +61,11 @@ namespace AutoTest
 
         public static string SendToSupervisor(int port, string server, string message, bool commandLine=true)
         {
+            /// <summary> 
             /// Метод отправляет строку:  
             /// "22 августа 2022 г. 11:41:44 Разрешено Родители 6_62_24 КПП_2_Выезд_2 U2037693 Фамилия Имя Отчество "
             /// Программе Supervisor 
+            /// </summary> 
 
             try
             {
