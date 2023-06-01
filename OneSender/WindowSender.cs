@@ -33,7 +33,7 @@ namespace OneSender
 
             foreach (var item in message.points)
             {
-                comboBox1.Items.Add(item);
+                comboBoxPoints.Items.Add(item);
             }
         }
 
@@ -97,7 +97,7 @@ namespace OneSender
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectedState = comboBox1.SelectedItem.ToString();
+            selectedState = comboBoxPoints.SelectedItem.ToString();
             buttonSend.Focus();
             //MessageBox.Show(selectedState);
         }
@@ -105,10 +105,10 @@ namespace OneSender
         private void checkBoxAllPoints_CheckedChanged(object sender, EventArgs e)
         {
            if (checkBoxAllPoints.Checked) 
-                comboBox1.Enabled = false;
+                comboBoxPoints.Enabled = false;
            else
             {
-                comboBox1.Enabled = true;
+                comboBoxPoints.Enabled = true;
                 checkBoxFio.Checked = false;
             }
                 

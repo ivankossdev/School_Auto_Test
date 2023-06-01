@@ -40,7 +40,7 @@
             this.checkBoxSecurity = new System.Windows.Forms.CheckBox();
             this.checkBoxFio = new System.Windows.Forms.CheckBox();
             this.checkBoxAllPoints = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPoints = new System.Windows.Forms.ComboBox();
             this.labelUser = new System.Windows.Forms.Label();
             this.buttonParent = new System.Windows.Forms.Button();
             this.buttonChildren = new System.Windows.Forms.Button();
@@ -115,7 +115,7 @@
             this.boxSittings.Controls.Add(this.checkBoxSecurity);
             this.boxSittings.Controls.Add(this.checkBoxFio);
             this.boxSittings.Controls.Add(this.checkBoxAllPoints);
-            this.boxSittings.Controls.Add(this.comboBox1);
+            this.boxSittings.Controls.Add(this.comboBoxPoints);
             this.boxSittings.Controls.Add(this.labelUser);
             this.boxSittings.Controls.Add(this.checkBoxBlockUser);
             this.boxSittings.Controls.Add(this.childrenNum);
@@ -173,15 +173,15 @@
             this.checkBoxAllPoints.UseVisualStyleBackColor = true;
             this.checkBoxAllPoints.CheckedChanged += new System.EventHandler(this.checkBoxAllPoints_CheckedChanged);
             // 
-            // comboBox1
+            // comboBoxPoints
             // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(113, 41);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(124, 21);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBoxPoints.Enabled = false;
+            this.comboBoxPoints.FormattingEnabled = true;
+            this.comboBoxPoints.Location = new System.Drawing.Point(113, 41);
+            this.comboBoxPoints.Name = "comboBoxPoints";
+            this.comboBoxPoints.Size = new System.Drawing.Size(124, 21);
+            this.comboBoxPoints.TabIndex = 6;
+            this.comboBoxPoints.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // labelUser
             // 
@@ -247,7 +247,7 @@
         private System.Windows.Forms.NumericUpDown childrenNum;
         private System.Windows.Forms.GroupBox boxSittings;
         private System.Windows.Forms.Label labelUser;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxPoints;
         private System.Windows.Forms.CheckBox checkBoxAllPoints;
         private System.Windows.Forms.CheckBox checkBoxFio;
         private System.Windows.Forms.CheckBox checkBoxSecurity;
