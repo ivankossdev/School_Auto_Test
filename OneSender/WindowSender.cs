@@ -94,10 +94,14 @@ namespace OneSender
 
         private void checkBoxAllPoints_CheckedChanged(object sender, EventArgs e)
         {
-           if (checkBoxAllPoints.Checked)
+           if (checkBoxAllPoints.Checked) 
                 comboBox1.Enabled = false;
-           else 
+           else
+            {
                 comboBox1.Enabled = true;
+                checkBoxFio.Checked = false;
+            }
+                
         }
 
         private void checkBoxFio_CheckedChanged(object sender, EventArgs e)
