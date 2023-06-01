@@ -15,7 +15,6 @@ namespace AutoTest
         {
             //XmlHandler handler = new XmlHandler();
             //handler.AddElement("doors.xml", "1234");
-
             CreateAndSendMessage();
         }
 
@@ -43,8 +42,14 @@ namespace AutoTest
             /// </summary> 
 
             Message message = new Message("doors.xml");
+            XmlHandler getIp= new XmlHandler();
+            string ip = string.Empty;
 
-            string ip = "192.168.0.204";
+            List<string> ipAddr = getIp.GetElemets("doors.xml", "ip");
+            if (ipAddr.Count > 0)
+            {
+                ip = ipAddr[0];
+            }
 
             string sleep = "5000";
 
@@ -52,7 +57,7 @@ namespace AutoTest
             {
                 foreach (string s in message.AllKppMessage(4))
                 {
-                    SendToSupervisor(10500, ip.Trim(), s);
+                    SendToSupervisor(10500, ip, s);
                 }
                 Thread.Sleep(int.Parse(sleep));
             }

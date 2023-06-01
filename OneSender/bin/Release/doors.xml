@@ -1,21 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <access>
-  <door name="point_1">
-    <name>КПП_1_Въезд_1</name>
-  </door>
-  <door name="point_2">
-    <name>КПП_1_Въезд_2</name>
-  </door>
-  <door name="point_3">
-    <name>КПП_2_Выезд_1</name>
-  </door>
-  <door name="point_4">
-    <name>КПП_2_Выезд_2</name>
-  </door>
-  <door name="point_5">
-    <name>КПП_1_Въезд_3</name>
-  </door>
-    <door name="point_6">
-    <name>КПП_1_Выезд_3</name>
-  </door>
+	<doors name="all_points">
+		<door name="point_1">
+			<name>КПП_1_Въезд_1</name>
+		</door>
+		<door name="point_2">
+			<name>КПП_1_Въезд_2</name>
+		</door>
+		<door name="point_3">
+			<name>КПП_2_Выезд_1</name>
+		</door>
+		<door name="point_4">
+			<name>КПП_2_Выезд_2</name>
+		</door>
+		<door name="point_5">
+			<name>КПП_1_Въезд_3</name>
+		</door>
+		<door name="point_6">
+			<name>КПП_1_Выезд_3</name>
+		</door>
+	</doors>
+	<addresses name="all_addresses">
+		<ip>
+			192.168.0.204
+		</ip>
+	</addresses>
 </access>

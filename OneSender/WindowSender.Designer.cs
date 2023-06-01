@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sender));
             this.buttonSend = new System.Windows.Forms.Button();
             this.labelIpAddress = new System.Windows.Forms.Label();
@@ -42,10 +41,8 @@
             this.checkBoxAllPoints = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelUser = new System.Windows.Forms.Label();
-            this.senderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.childrenNum)).BeginInit();
             this.boxSittings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.senderBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSend
@@ -178,10 +175,6 @@
             this.labelUser.TabIndex = 5;
             this.labelUser.Text = "Ученики";
             // 
-            // senderBindingSource
-            // 
-            this.senderBindingSource.DataSource = typeof(OneSender.Sender);
-            // 
             // Sender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,7 +195,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.childrenNum)).EndInit();
             this.boxSittings.ResumeLayout(false);
             this.boxSittings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.senderBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,7 +211,6 @@
         private System.Windows.Forms.GroupBox boxSittings;
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.BindingSource senderBindingSource;
         private System.Windows.Forms.CheckBox checkBoxAllPoints;
         private System.Windows.Forms.CheckBox checkBoxFio;
         private System.Windows.Forms.CheckBox checkBoxSecurity;

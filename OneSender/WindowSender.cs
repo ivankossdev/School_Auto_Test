@@ -16,9 +16,19 @@ namespace OneSender
     public partial class Sender : Form
     {
         AutoTest.Message message = new AutoTest.Message("doors.xml");
+        XmlHandler getIp = new XmlHandler();
+        string ip = string.Empty;
+
         public Sender()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+
+            List<string> ipAddr = getIp.GetElemets("doors.xml", "ip");
+            if (ipAddr.Count > 0)
+            {
+                ip = ipAddr[0];
+            }
+
             message.fio = "Фамилия Имя Отчество ";
 
             foreach (var item in message.points)
@@ -44,7 +54,7 @@ namespace OneSender
             if (checkBoxSecurity.Checked)
             {
                 string mes = message.SecurityCardMessage(selectedState);
-                report = $". {AutoTest.Program.SendToSupervisor(10500, "192.168.0.204", mes, false)}\n";
+                report = $". {AutoTest.Program.SendToSupervisor(10500, ip, mes, false)}\n";
                 worker.ReportProgress(i++);
             }
             else
@@ -53,7 +63,7 @@ namespace OneSender
                 {
                     foreach (string s in message.AllKppMessage((int)childrenNum.Value, checkBoxBlockUser.Checked))
                     {
-                        report = $". {AutoTest.Program.SendToSupervisor(10500, "192.168.0.204", s, false)}\n";
+                        report = $". {AutoTest.Program.SendToSupervisor(10500, ip, s, false)}\n";
                         worker.ReportProgress(i++);
                     }
                 }
@@ -61,7 +71,7 @@ namespace OneSender
                 {
                     foreach (string s in message.OneKppMessqge((int)childrenNum.Value, selectedState, checkBoxBlockUser.Checked))
                     {
-                        report = $". {AutoTest.Program.SendToSupervisor(10500, "192.168.0.204", s, false)}\n";
+                        report = $". {AutoTest.Program.SendToSupervisor(10500, ip, s, false)}\n";
                         worker.ReportProgress(i++);
                     }
                 }

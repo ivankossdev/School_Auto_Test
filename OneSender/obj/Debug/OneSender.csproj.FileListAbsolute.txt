@@ -1,0 +1,15 @@
+C:\Users\RR\source\repos\School_Auto_Test\OneSender\bin\Debug\OneSender.exe.config
+C:\Users\RR\source\repos\School_Auto_Test\OneSender\bin\Debug\OneSender.exe
+C:\Users\RR\source\repos\School_Auto_Test\OneSender\bin\Debug\OneSender.pdb
+C:\Users\RR\source\repos\School_Auto_Test\OneSender\bin\Debug\AutoTest.exe
+C:\Users\RR\source\repos\School_Auto_Test\OneSender\bin\Debug\AutoTest.pdb
+C:\Users\RR\source\repos\School_Auto_Test\OneSender\bin\Debug\AutoTest.exe.config
+C:\Users\RR\source\repos\School_Auto_Test\OneSender\obj\Debug\OneSender.csproj.AssemblyReference.cache
+C:\Users\RR\source\repos\School_Auto_Test\OneSender\obj\Debug\OneSender.csproj.SuggestedBindingRedirects.cache
+C:\Users\RR\source\repos\School_Auto_Test\OneSender\obj\Debug\OneSender.Sender.resources
+C:\Users\RR\source\repos\School_Auto_Test\OneSender\obj\Debug\OneSender.csproj.GenerateResource.cache
+C:\Users\RR\source\repos\School_Auto_Test\OneSender\obj\Debug\OneSender.csproj.CoreCompileInputs.cache
+C:\Users\RR\source\repos\School_Auto_Test\OneSender\obj\Debug\OneSender.csproj.CopyComplete
+C:\Users\RR\source\repos\School_Auto_Test\OneSender\obj\Debug\OneSender.exe
+C:\Users\RR\source\repos\School_Auto_Test\OneSender\obj\Debug\OneSender.pdb
+C:\Users\RR\source\repos\School_Auto_Test\OneSender\obj\Debug\OneSender.Properties.Resources.resources

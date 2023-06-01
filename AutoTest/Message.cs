@@ -18,7 +18,7 @@ namespace AutoTest
 
         public Message(string document) {
 
-            points = xmlHandler.GetPoinst(document);
+            points = xmlHandler.GetElemets(document, "door");
         }
 
         Random random = new Random();

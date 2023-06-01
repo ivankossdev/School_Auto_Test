@@ -6,3 +6,11 @@ C:\Users\RR\source\repos\AutoTest\AutoTest\obj\Debug\AutoTest.csproj.SuggestedBi
 C:\Users\RR\source\repos\AutoTest\AutoTest\obj\Debug\AutoTest.csproj.CoreCompileInputs.cache
 C:\Users\RR\source\repos\AutoTest\AutoTest\obj\Debug\AutoTest.exe
 C:\Users\RR\source\repos\AutoTest\AutoTest\obj\Debug\AutoTest.pdb
+C:\Users\RR\source\repos\School_Auto_Test\AutoTest\bin\Debug\AutoTest.exe.config
+C:\Users\RR\source\repos\School_Auto_Test\AutoTest\bin\Debug\AutoTest.exe
+C:\Users\RR\source\repos\School_Auto_Test\AutoTest\bin\Debug\AutoTest.pdb
+C:\Users\RR\source\repos\School_Auto_Test\AutoTest\obj\Debug\AutoTest.csproj.AssemblyReference.cache
+C:\Users\RR\source\repos\School_Auto_Test\AutoTest\obj\Debug\AutoTest.csproj.SuggestedBindingRedirects.cache
+C:\Users\RR\source\repos\School_Auto_Test\AutoTest\obj\Debug\AutoTest.csproj.CoreCompileInputs.cache
+C:\Users\RR\source\repos\School_Auto_Test\AutoTest\obj\Debug\AutoTest.exe
+C:\Users\RR\source\repos\School_Auto_Test\AutoTest\obj\Debug\AutoTest.pdb

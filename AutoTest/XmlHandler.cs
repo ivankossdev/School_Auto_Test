@@ -7,10 +7,11 @@ using System.IO;
 using System.Xml;
 using System.Net.Sockets;
 using System.Xml.Linq;
+using System.Reflection;
 
 namespace AutoTest
 {
-    internal class XmlHandler
+    public class XmlHandler
     {
         XmlDocument door = new XmlDocument();
 
@@ -40,6 +41,32 @@ namespace AutoTest
             }
 
             return points;
+        }
+
+        public List<string> GetElemets(string document, string node)
+        {
+            List<string> elements = new List<string>();
+
+            try
+            {
+                door.Load($"{Directory.GetCurrentDirectory()}\\{document}");
+                XmlNodeList elemList = door.GetElementsByTagName(node);
+
+                for (int i = 0; i < elemList.Count; i++)
+                {
+                    elements.Add(elemList[i].InnerText.ToString().Trim());
+                }
+            }
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine($"Error: {e}");
+            }
+            catch (XmlException e)
+            {
+                Console.WriteLine($"Error: {e}");
+            }
+
+            return elements;
         }
 
         public void AddElement(string document, string nameNode)
