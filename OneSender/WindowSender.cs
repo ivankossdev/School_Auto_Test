@@ -81,7 +81,8 @@ namespace OneSender
         private void backSender_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             textBoxIpAddr.AppendText("Завершено\n");
-            checkBoxSecurity.Checked = false;
+            if (checkBoxSecurity.Checked) checkBoxSecurity.Checked = false;
+             
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

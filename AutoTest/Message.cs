@@ -22,7 +22,7 @@ namespace AutoTest
         }
 
         Random random = new Random();
-        XmlHandler xmlHandler = new XmlHandler();
+        readonly XmlHandler xmlHandler = new XmlHandler();
         public List<string> points = new List<string>();
 
         /* Метод формирует id пользователя */
@@ -80,6 +80,7 @@ namespace AutoTest
             return visitors;
         }
 
+        /* Метод формирует карты охраны, для очистки событий в таблице */
         public string SecurityCardMessage(string point)
         {
             return $"22 августа 2022 г. 11:41:44 Разрешено Охрана Охрана {point} {IdUser()} {fio}";

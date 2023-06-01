@@ -37,12 +37,12 @@
             this.checkBoxBlockUser = new System.Windows.Forms.CheckBox();
             this.childrenNum = new System.Windows.Forms.NumericUpDown();
             this.boxSittings = new System.Windows.Forms.GroupBox();
+            this.checkBoxSecurity = new System.Windows.Forms.CheckBox();
             this.checkBoxFio = new System.Windows.Forms.CheckBox();
             this.checkBoxAllPoints = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelUser = new System.Windows.Forms.Label();
             this.senderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.checkBoxSecurity = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.childrenNum)).BeginInit();
             this.boxSittings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.senderBindingSource)).BeginInit();
@@ -123,12 +123,22 @@
             this.boxSittings.TabStop = false;
             this.boxSittings.Text = "Настройки";
             // 
+            // checkBoxSecurity
+            // 
+            this.checkBoxSecurity.AutoSize = true;
+            this.checkBoxSecurity.Location = new System.Drawing.Point(243, 43);
+            this.checkBoxSecurity.Name = "checkBoxSecurity";
+            this.checkBoxSecurity.Size = new System.Drawing.Size(98, 17);
+            this.checkBoxSecurity.TabIndex = 9;
+            this.checkBoxSecurity.Text = "Карта Охраны";
+            this.checkBoxSecurity.UseVisualStyleBackColor = true;
+            // 
             // checkBoxFio
             // 
             this.checkBoxFio.AutoSize = true;
             this.checkBoxFio.Checked = true;
             this.checkBoxFio.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxFio.Location = new System.Drawing.Point(222, 19);
+            this.checkBoxFio.Location = new System.Drawing.Point(243, 20);
             this.checkBoxFio.Name = "checkBoxFio";
             this.checkBoxFio.Size = new System.Drawing.Size(62, 17);
             this.checkBoxFio.TabIndex = 8;
@@ -172,16 +182,6 @@
             // senderBindingSource
             // 
             this.senderBindingSource.DataSource = typeof(OneSender.Sender);
-            // 
-            // checkBoxSecurity
-            // 
-            this.checkBoxSecurity.AutoSize = true;
-            this.checkBoxSecurity.Location = new System.Drawing.Point(291, 19);
-            this.checkBoxSecurity.Name = "checkBoxSecurity";
-            this.checkBoxSecurity.Size = new System.Drawing.Size(98, 17);
-            this.checkBoxSecurity.TabIndex = 9;
-            this.checkBoxSecurity.Text = "Карта Охраны";
-            this.checkBoxSecurity.UseVisualStyleBackColor = true;
             // 
             // Sender
             // 
