@@ -15,7 +15,7 @@ namespace OneSender
 {
     public partial class Sender : Form
     {
-        AutoTest.Message message = new AutoTest.Message("doors.xml");
+        MessageGenerate message = new MessageGenerate("doors.xml");
         XmlHandler getIp = new XmlHandler();
         string ip = string.Empty;
 

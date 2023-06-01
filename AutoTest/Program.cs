@@ -41,7 +41,7 @@ namespace AutoTest
             /// Метод создает и отправляет строку
             /// </summary> 
 
-            Message message = new Message("doors.xml");
+            MessageGenerate message = new MessageGenerate("doors.xml");
             XmlHandler getIp= new XmlHandler();
             string ip = string.Empty;
 

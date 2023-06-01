@@ -7,7 +7,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace AutoTest
 {
-    public class Message
+    public class MessageGenerate
     {
         /// <summary>
         /// Класс генерирует строку для отправки программе Evidence-Supervisor
@@ -16,7 +16,7 @@ namespace AutoTest
         /// "22 августа 2022 г. 11:41:44 Запрещено Ученики 24 КПП_2_Выезд_2 U1996882 Фамилия Имя Отчество "
         /// </summary> 
 
-        public Message(string document) {
+        public MessageGenerate(string document) {
 
             points = xmlHandler.GetElemets(document, "door");
         }
