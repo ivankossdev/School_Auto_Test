@@ -46,7 +46,7 @@ namespace AutoTest
 
             string ip = "192.168.0.204";
 
-            string sleep = "1000";
+            string sleep = "5000";
 
             for ( ; ; )
             {
@@ -81,7 +81,7 @@ namespace AutoTest
                     Console.WriteLine($"Sent: {message}");
                 }
                
-                Thread.Sleep(100);
+                Thread.Sleep(50);
 
                 stream.Close();
                 client.Close();

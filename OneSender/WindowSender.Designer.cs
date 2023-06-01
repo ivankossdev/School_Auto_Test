@@ -42,6 +42,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelUser = new System.Windows.Forms.Label();
             this.senderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.checkBoxSecurity = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.childrenNum)).BeginInit();
             this.boxSittings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.senderBindingSource)).BeginInit();
@@ -108,6 +109,7 @@
             // 
             // boxSittings
             // 
+            this.boxSittings.Controls.Add(this.checkBoxSecurity);
             this.boxSittings.Controls.Add(this.checkBoxFio);
             this.boxSittings.Controls.Add(this.checkBoxAllPoints);
             this.boxSittings.Controls.Add(this.comboBox1);
@@ -116,7 +118,7 @@
             this.boxSittings.Controls.Add(this.childrenNum);
             this.boxSittings.Location = new System.Drawing.Point(12, 138);
             this.boxSittings.Name = "boxSittings";
-            this.boxSittings.Size = new System.Drawing.Size(365, 74);
+            this.boxSittings.Size = new System.Drawing.Size(598, 74);
             this.boxSittings.TabIndex = 5;
             this.boxSittings.TabStop = false;
             this.boxSittings.Text = "Настройки";
@@ -153,7 +155,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(113, 41);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(103, 21);
+            this.comboBox1.Size = new System.Drawing.Size(124, 21);
             this.comboBox1.TabIndex = 6;
             this.comboBox1.Text = "КПП";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -170,6 +172,16 @@
             // senderBindingSource
             // 
             this.senderBindingSource.DataSource = typeof(OneSender.Sender);
+            // 
+            // checkBoxSecurity
+            // 
+            this.checkBoxSecurity.AutoSize = true;
+            this.checkBoxSecurity.Location = new System.Drawing.Point(291, 19);
+            this.checkBoxSecurity.Name = "checkBoxSecurity";
+            this.checkBoxSecurity.Size = new System.Drawing.Size(98, 17);
+            this.checkBoxSecurity.TabIndex = 9;
+            this.checkBoxSecurity.Text = "Карта Охраны";
+            this.checkBoxSecurity.UseVisualStyleBackColor = true;
             // 
             // Sender
             // 
@@ -211,6 +223,7 @@
         private System.Windows.Forms.BindingSource senderBindingSource;
         private System.Windows.Forms.CheckBox checkBoxAllPoints;
         private System.Windows.Forms.CheckBox checkBoxFio;
+        private System.Windows.Forms.CheckBox checkBoxSecurity;
     }
 }
 

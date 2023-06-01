@@ -60,8 +60,6 @@ namespace AutoTest
 
         public string fio = string.Empty;
 
-        
-
         /* Метод формирует строку из сопровождающих и учащихся */
         private List<string> VisitorList(int count, string point, bool blockUser=false)
         {
@@ -80,6 +78,11 @@ namespace AutoTest
                 visitors.Add($"22 августа 2022 г. 11:41:44 Разрешено Родители {group} {point} {IdUser()} {fio}");
 
             return visitors;
+        }
+
+        public string SecurityCardMessage(string point)
+        {
+            return $"22 августа 2022 г. 11:41:44 Разрешено Охрана Охрана {point} {IdUser()} {fio}";
         }
 
         /* Метод добавляет в массив message сформированные сроки для отправки */

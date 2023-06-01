@@ -41,20 +41,29 @@ namespace OneSender
         {
             BackgroundWorker worker = sender as BackgroundWorker;
 
-            if (checkBoxAllPoints.Checked)
+            if (checkBoxSecurity.Checked)
             {
-                foreach (string s in message.AllKppMessage((int)childrenNum.Value, checkBoxBlockUser.Checked))
-                {
-                    report = $". {AutoTest.Program.SendToSupervisor(10500, "192.168.0.204", s, false)}\n";
-                    worker.ReportProgress(i++);
-                }
+                string mes = message.SecurityCardMessage(selectedState);
+                report = $". {AutoTest.Program.SendToSupervisor(10500, "192.168.0.204", mes, false)}\n";
+                worker.ReportProgress(i++);
             }
             else
             {
-                foreach (string s in message.OneKppMessqge((int)childrenNum.Value, selectedState, checkBoxBlockUser.Checked))
+                if (checkBoxAllPoints.Checked)
                 {
-                    report = $". {AutoTest.Program.SendToSupervisor(10500, "192.168.0.204", s, false)}\n";
-                    worker.ReportProgress(i++);
+                    foreach (string s in message.AllKppMessage((int)childrenNum.Value, checkBoxBlockUser.Checked))
+                    {
+                        report = $". {AutoTest.Program.SendToSupervisor(10500, "192.168.0.204", s, false)}\n";
+                        worker.ReportProgress(i++);
+                    }
+                }
+                else
+                {
+                    foreach (string s in message.OneKppMessqge((int)childrenNum.Value, selectedState, checkBoxBlockUser.Checked))
+                    {
+                        report = $". {AutoTest.Program.SendToSupervisor(10500, "192.168.0.204", s, false)}\n";
+                        worker.ReportProgress(i++);
+                    }
                 }
             }
         }
@@ -72,6 +81,7 @@ namespace OneSender
         private void backSender_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             textBoxIpAddr.AppendText("Завершено\n");
+            checkBoxSecurity.Checked = false;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
