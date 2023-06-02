@@ -104,14 +104,25 @@ namespace OneSender
 
         private void checkBoxAllPoints_CheckedChanged(object sender, EventArgs e)
         {
-           if (checkBoxAllPoints.Checked) 
+           if (checkBoxAllPoints.Checked)
+            {
                 comboBoxPoints.Enabled = false;
+                SetEnableGroupBlock(false);
+            }
            else
             {
                 comboBoxPoints.Enabled = true;
                 checkBoxFio.Checked = false;
+                SetEnableGroupBlock(true);
             }
                 
+        }
+
+        private void SetEnableGroupBlock(bool enable)
+        {
+            checkBoxGroup.Enabled = enable;
+            buttonParent.Enabled = enable;
+            buttonChildren.Enabled = enable;
         }
 
         private void checkBoxFio_CheckedChanged(object sender, EventArgs e)
@@ -120,6 +131,20 @@ namespace OneSender
                 message.fio = "Фамилия Имя Отчество ";
             else
                 message.fio = string.Empty;
+        }
+
+        private void checkBoxGroup_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxGroup.Checked)
+            {
+                buttonSend.Enabled = false;
+                buttonChildren.Focus();
+            }
+            else
+            {
+                buttonSend.Enabled = true;
+                buttonSend.Focus();
+            }
         }
     }
 }

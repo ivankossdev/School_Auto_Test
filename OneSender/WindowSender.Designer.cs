@@ -36,14 +36,14 @@
             this.checkBoxBlockUser = new System.Windows.Forms.CheckBox();
             this.childrenNum = new System.Windows.Forms.NumericUpDown();
             this.boxSittings = new System.Windows.Forms.GroupBox();
+            this.buttonChildren = new System.Windows.Forms.Button();
+            this.buttonParent = new System.Windows.Forms.Button();
             this.checkBoxGroup = new System.Windows.Forms.CheckBox();
             this.checkBoxSecurity = new System.Windows.Forms.CheckBox();
             this.checkBoxFio = new System.Windows.Forms.CheckBox();
             this.checkBoxAllPoints = new System.Windows.Forms.CheckBox();
             this.comboBoxPoints = new System.Windows.Forms.ComboBox();
             this.labelUser = new System.Windows.Forms.Label();
-            this.buttonParent = new System.Windows.Forms.Button();
-            this.buttonChildren = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.childrenNum)).BeginInit();
             this.boxSittings.SuspendLayout();
             this.SuspendLayout();
@@ -126,6 +126,26 @@
             this.boxSittings.TabStop = false;
             this.boxSittings.Text = "Настройки";
             // 
+            // buttonChildren
+            // 
+            this.buttonChildren.Enabled = false;
+            this.buttonChildren.Location = new System.Drawing.Point(421, 39);
+            this.buttonChildren.Name = "buttonChildren";
+            this.buttonChildren.Size = new System.Drawing.Size(75, 23);
+            this.buttonChildren.TabIndex = 12;
+            this.buttonChildren.Text = "Ученик";
+            this.buttonChildren.UseVisualStyleBackColor = true;
+            // 
+            // buttonParent
+            // 
+            this.buttonParent.Enabled = false;
+            this.buttonParent.Location = new System.Drawing.Point(340, 39);
+            this.buttonParent.Name = "buttonParent";
+            this.buttonParent.Size = new System.Drawing.Size(75, 23);
+            this.buttonParent.TabIndex = 11;
+            this.buttonParent.Text = "Родитель";
+            this.buttonParent.UseVisualStyleBackColor = true;
+            // 
             // checkBoxGroup
             // 
             this.checkBoxGroup.AutoSize = true;
@@ -136,6 +156,7 @@
             this.checkBoxGroup.TabIndex = 10;
             this.checkBoxGroup.Text = "Группа";
             this.checkBoxGroup.UseVisualStyleBackColor = true;
+            this.checkBoxGroup.CheckedChanged += new System.EventHandler(this.checkBoxGroup_CheckedChanged);
             // 
             // checkBoxSecurity
             // 
@@ -191,26 +212,6 @@
             this.labelUser.Size = new System.Drawing.Size(50, 13);
             this.labelUser.TabIndex = 5;
             this.labelUser.Text = "Ученики";
-            // 
-            // buttonParent
-            // 
-            this.buttonParent.Enabled = false;
-            this.buttonParent.Location = new System.Drawing.Point(340, 39);
-            this.buttonParent.Name = "buttonParent";
-            this.buttonParent.Size = new System.Drawing.Size(75, 23);
-            this.buttonParent.TabIndex = 11;
-            this.buttonParent.Text = "Родитель";
-            this.buttonParent.UseVisualStyleBackColor = true;
-            // 
-            // buttonChildren
-            // 
-            this.buttonChildren.Enabled = false;
-            this.buttonChildren.Location = new System.Drawing.Point(421, 39);
-            this.buttonChildren.Name = "buttonChildren";
-            this.buttonChildren.Size = new System.Drawing.Size(75, 23);
-            this.buttonChildren.TabIndex = 12;
-            this.buttonChildren.Text = "Ученик";
-            this.buttonChildren.UseVisualStyleBackColor = true;
             // 
             // Sender
             // 
