@@ -38,11 +38,11 @@
             this.boxSittings = new System.Windows.Forms.GroupBox();
             this.buttonChildren = new System.Windows.Forms.Button();
             this.buttonParent = new System.Windows.Forms.Button();
-            this.checkBoxSecurity = new System.Windows.Forms.CheckBox();
             this.checkBoxFio = new System.Windows.Forms.CheckBox();
             this.checkBoxAllPoints = new System.Windows.Forms.CheckBox();
             this.comboBoxPoints = new System.Windows.Forms.ComboBox();
             this.labelUser = new System.Windows.Forms.Label();
+            this.buttonSecurity = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.childrenNum)).BeginInit();
             this.boxSittings.SuspendLayout();
             this.SuspendLayout();
@@ -108,9 +108,9 @@
             // 
             // boxSittings
             // 
+            this.boxSittings.Controls.Add(this.buttonSecurity);
             this.boxSittings.Controls.Add(this.buttonChildren);
             this.boxSittings.Controls.Add(this.buttonParent);
-            this.boxSittings.Controls.Add(this.checkBoxSecurity);
             this.boxSittings.Controls.Add(this.checkBoxFio);
             this.boxSittings.Controls.Add(this.checkBoxAllPoints);
             this.boxSittings.Controls.Add(this.comboBoxPoints);
@@ -127,7 +127,7 @@
             // buttonChildren
             // 
             this.buttonChildren.Enabled = false;
-            this.buttonChildren.Location = new System.Drawing.Point(421, 39);
+            this.buttonChildren.Location = new System.Drawing.Point(405, 39);
             this.buttonChildren.Name = "buttonChildren";
             this.buttonChildren.Size = new System.Drawing.Size(75, 23);
             this.buttonChildren.TabIndex = 12;
@@ -138,23 +138,13 @@
             // buttonParent
             // 
             this.buttonParent.Enabled = false;
-            this.buttonParent.Location = new System.Drawing.Point(340, 39);
+            this.buttonParent.Location = new System.Drawing.Point(324, 39);
             this.buttonParent.Name = "buttonParent";
             this.buttonParent.Size = new System.Drawing.Size(75, 23);
             this.buttonParent.TabIndex = 11;
             this.buttonParent.Text = "Родитель";
             this.buttonParent.UseVisualStyleBackColor = true;
             this.buttonParent.Click += new System.EventHandler(this.buttonParent_Click);
-            // 
-            // checkBoxSecurity
-            // 
-            this.checkBoxSecurity.AutoSize = true;
-            this.checkBoxSecurity.Location = new System.Drawing.Point(243, 43);
-            this.checkBoxSecurity.Name = "checkBoxSecurity";
-            this.checkBoxSecurity.Size = new System.Drawing.Size(98, 17);
-            this.checkBoxSecurity.TabIndex = 9;
-            this.checkBoxSecurity.Text = "Карта Охраны";
-            this.checkBoxSecurity.UseVisualStyleBackColor = true;
             // 
             // checkBoxFio
             // 
@@ -201,6 +191,16 @@
             this.labelUser.TabIndex = 5;
             this.labelUser.Text = "Ученики";
             // 
+            // buttonSecurity
+            // 
+            this.buttonSecurity.Location = new System.Drawing.Point(243, 39);
+            this.buttonSecurity.Name = "buttonSecurity";
+            this.buttonSecurity.Size = new System.Drawing.Size(75, 23);
+            this.buttonSecurity.TabIndex = 13;
+            this.buttonSecurity.Text = "Охрана";
+            this.buttonSecurity.UseVisualStyleBackColor = true;
+            this.buttonSecurity.Click += new System.EventHandler(this.buttonSecurity_Click);
+            // 
             // Sender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,9 +239,9 @@
         private System.Windows.Forms.ComboBox comboBoxPoints;
         private System.Windows.Forms.CheckBox checkBoxAllPoints;
         private System.Windows.Forms.CheckBox checkBoxFio;
-        private System.Windows.Forms.CheckBox checkBoxSecurity;
         private System.Windows.Forms.Button buttonChildren;
         private System.Windows.Forms.Button buttonParent;
+        private System.Windows.Forms.Button buttonSecurity;
     }
 }
 

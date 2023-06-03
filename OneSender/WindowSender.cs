@@ -16,6 +16,7 @@ namespace OneSender
     public partial class Sender : Form
     {
         MessageGenerate message = new MessageGenerate("doors.xml");
+        OneMessage oneMessage = new OneMessage("doors.xml");
         XmlHandler getIp = new XmlHandler();
         string ip = string.Empty;
 
@@ -45,35 +46,26 @@ namespace OneSender
 
         int i = 0;
         string report = string.Empty;
-        string selectedState = string.Empty;
+        string selectedPoint = string.Empty;
 
         private void backSender_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
 
-            if (checkBoxSecurity.Checked)
+            if (checkBoxAllPoints.Checked)
             {
-                string mes = oneMessage.SendSecurity(selectedState);
-                report = $". {AutoTest.Program.SendToSupervisor(10500, ip, mes, false)}\n";
-                worker.ReportProgress(i++);
+                foreach (string s in message.AllKppMessage((int)childrenNum.Value, checkBoxBlockUser.Checked))
+                {
+                    report = $". {AutoTest.Program.SendToSupervisor(10500, ip, s, false)}\n";
+                    worker.ReportProgress(i++);
+                }
             }
             else
             {
-                if (checkBoxAllPoints.Checked)
+                foreach (string s in message.OneKppMessqge((int)childrenNum.Value, selectedPoint, checkBoxBlockUser.Checked))
                 {
-                    foreach (string s in message.AllKppMessage((int)childrenNum.Value, checkBoxBlockUser.Checked))
-                    {
-                        report = $". {AutoTest.Program.SendToSupervisor(10500, ip, s, false)}\n";
-                        worker.ReportProgress(i++);
-                    }
-                }
-                else
-                {
-                    foreach (string s in message.OneKppMessqge((int)childrenNum.Value, selectedState, checkBoxBlockUser.Checked))
-                    {
-                        report = $". {AutoTest.Program.SendToSupervisor(10500, ip, s, false)}\n";
-                        worker.ReportProgress(i++);
-                    }
+                    report = $". {AutoTest.Program.SendToSupervisor(10500, ip, s, false)}\n";
+                    worker.ReportProgress(i++);
                 }
             }
         }
@@ -91,30 +83,29 @@ namespace OneSender
         private void backSender_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             textBoxIpAddr.AppendText("Завершено\n");
-            if (checkBoxSecurity.Checked) checkBoxSecurity.Checked = false;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectedState = comboBoxPoints.SelectedItem.ToString();
+            selectedPoint = comboBoxPoints.SelectedItem.ToString();
             buttonSend.Focus();
             //MessageBox.Show(selectedState);
         }
 
         private void checkBoxAllPoints_CheckedChanged(object sender, EventArgs e)
         {
-           if (checkBoxAllPoints.Checked)
+            if (checkBoxAllPoints.Checked)
             {
                 comboBoxPoints.Enabled = false;
                 SetEnableGroupBlock(false);
             }
-           else
+            else
             {
                 comboBoxPoints.Enabled = true;
                 checkBoxFio.Checked = false;
                 SetEnableGroupBlock(true);
             }
-                
+            buttonSend.Focus();
         }
 
         private void SetEnableGroupBlock(bool enable)
@@ -131,16 +122,25 @@ namespace OneSender
                 message.fio = string.Empty;
         }
 
-        OneMessage oneMessage = new OneMessage("doors.xml");
-
         private void buttonChildren_Click(object sender, EventArgs e)
         {
-            textBoxIpAddr.AppendText($"{oneMessage.SendChildren(selectedState)}\n");
+            string m = oneMessage.SendChildren(selectedPoint);
+            AutoTest.Program.SendToSupervisor(10500, ip, m, false);
+            textBoxIpAddr.AppendText($"{m} \n");
         }
 
         private void buttonParent_Click(object sender, EventArgs e)
         {
-            textBoxIpAddr.AppendText($"{oneMessage.SendParent(selectedState)}\n");
+            string m = oneMessage.SendParent(selectedPoint);
+            AutoTest.Program.SendToSupervisor(10500, ip, m, false);
+            textBoxIpAddr.AppendText($"{m} \n");
+        }
+
+        private void buttonSecurity_Click(object sender, EventArgs e)
+        {
+            string m = oneMessage.SendSecurity(selectedPoint);
+            AutoTest.Program.SendToSupervisor(10500, ip, m, false);
+            textBoxIpAddr.AppendText($"{m} \n");
         }
     }
 }
