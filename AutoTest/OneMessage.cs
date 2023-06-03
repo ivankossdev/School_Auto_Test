@@ -10,6 +10,7 @@ namespace AutoTest
     public class OneMessage : MessageGenerate
     {
         string group  = string.Empty;
+        
         public OneMessage(string document) : base(document)
         {
             group = Group(1);

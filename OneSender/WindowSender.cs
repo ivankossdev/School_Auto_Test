@@ -120,7 +120,6 @@ namespace OneSender
 
         private void SetEnableGroupBlock(bool enable)
         {
-            checkBoxGroup.Enabled = enable;
             buttonParent.Enabled = enable;
             buttonChildren.Enabled = enable;
         }
@@ -135,19 +134,6 @@ namespace OneSender
 
         OneMessage oneMessage = new OneMessage("doors.xml");
 
-        private void checkBoxGroup_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxGroup.Checked)
-            {
-                buttonSend.Enabled = false;
-                buttonChildren.Focus();
-            }
-            else
-            {
-                buttonSend.Enabled = true;
-                buttonSend.Focus();
-            }
-        }
 
         private void buttonChildren_Click(object sender, EventArgs e)
         {

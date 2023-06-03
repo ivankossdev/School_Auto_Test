@@ -38,7 +38,6 @@
             this.boxSittings = new System.Windows.Forms.GroupBox();
             this.buttonChildren = new System.Windows.Forms.Button();
             this.buttonParent = new System.Windows.Forms.Button();
-            this.checkBoxGroup = new System.Windows.Forms.CheckBox();
             this.checkBoxSecurity = new System.Windows.Forms.CheckBox();
             this.checkBoxFio = new System.Windows.Forms.CheckBox();
             this.checkBoxAllPoints = new System.Windows.Forms.CheckBox();
@@ -111,7 +110,6 @@
             // 
             this.boxSittings.Controls.Add(this.buttonChildren);
             this.boxSittings.Controls.Add(this.buttonParent);
-            this.boxSittings.Controls.Add(this.checkBoxGroup);
             this.boxSittings.Controls.Add(this.checkBoxSecurity);
             this.boxSittings.Controls.Add(this.checkBoxFio);
             this.boxSittings.Controls.Add(this.checkBoxAllPoints);
@@ -147,18 +145,6 @@
             this.buttonParent.Text = "Родитель";
             this.buttonParent.UseVisualStyleBackColor = true;
             this.buttonParent.Click += new System.EventHandler(this.buttonParent_Click);
-            // 
-            // checkBoxGroup
-            // 
-            this.checkBoxGroup.AutoSize = true;
-            this.checkBoxGroup.Enabled = false;
-            this.checkBoxGroup.Location = new System.Drawing.Point(340, 19);
-            this.checkBoxGroup.Name = "checkBoxGroup";
-            this.checkBoxGroup.Size = new System.Drawing.Size(61, 17);
-            this.checkBoxGroup.TabIndex = 10;
-            this.checkBoxGroup.Text = "Группа";
-            this.checkBoxGroup.UseVisualStyleBackColor = true;
-            this.checkBoxGroup.CheckedChanged += new System.EventHandler(this.checkBoxGroup_CheckedChanged);
             // 
             // checkBoxSecurity
             // 
@@ -254,7 +240,6 @@
         private System.Windows.Forms.CheckBox checkBoxAllPoints;
         private System.Windows.Forms.CheckBox checkBoxFio;
         private System.Windows.Forms.CheckBox checkBoxSecurity;
-        private System.Windows.Forms.CheckBox checkBoxGroup;
         private System.Windows.Forms.Button buttonChildren;
         private System.Windows.Forms.Button buttonParent;
     }
