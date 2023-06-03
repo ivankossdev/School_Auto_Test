@@ -53,7 +53,7 @@ namespace OneSender
 
             if (checkBoxSecurity.Checked)
             {
-                string mes = message.SecurityCardMessage(selectedState);
+                string mes = oneMessage.SendSecurity(selectedState);
                 report = $". {AutoTest.Program.SendToSupervisor(10500, ip, mes, false)}\n";
                 worker.ReportProgress(i++);
             }
@@ -92,7 +92,6 @@ namespace OneSender
         {
             textBoxIpAddr.AppendText("Завершено\n");
             if (checkBoxSecurity.Checked) checkBoxSecurity.Checked = false;
-             
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -133,7 +132,6 @@ namespace OneSender
         }
 
         OneMessage oneMessage = new OneMessage("doors.xml");
-
 
         private void buttonChildren_Click(object sender, EventArgs e)
         {

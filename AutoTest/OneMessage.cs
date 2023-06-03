@@ -9,7 +9,7 @@ namespace AutoTest
 {
     public class OneMessage : MessageGenerate
     {
-        string group  = string.Empty;
+        string group = string.Empty;
         
         public OneMessage(string document) : base(document)
         {
@@ -24,6 +24,12 @@ namespace AutoTest
         public string SendParent(string point)
         {
             return $"22 августа 2022 г. 11:41:44 Разрешено Родители {group} {point} {IdUser()} ";
+        }
+
+        /* Метод формирует карты охраны, для очистки событий в таблице */
+        public string SendSecurity(string point)
+        {
+            return $"22 августа 2022 г. 11:41:44 Разрешено Охрана Охрана {point} {IdUser()} ";
         }
     }
 }
