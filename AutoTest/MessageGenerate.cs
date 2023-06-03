@@ -26,14 +26,14 @@ namespace AutoTest
         public List<string> points = new List<string>();
 
         /* Метод формирует id пользователя */
-        private string IdUser()
+        private protected string IdUser()
         {
             return $"U{random.Next(1, 10000000)}";
         }
 
         /* Метод генерирует строку с группами сопровождающих
          * пример: "66_44" */
-        private string Group(int count)
+        private protected string Group(int count)
         {
             string group = "";
             for(int i = 0; i < count; i++)

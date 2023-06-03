@@ -133,6 +133,8 @@ namespace OneSender
                 message.fio = string.Empty;
         }
 
+        OneMessage oneMessage = new OneMessage("doors.xml");
+
         private void checkBoxGroup_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxGroup.Checked)
@@ -145,6 +147,16 @@ namespace OneSender
                 buttonSend.Enabled = true;
                 buttonSend.Focus();
             }
+        }
+
+        private void buttonChildren_Click(object sender, EventArgs e)
+        {
+            textBoxIpAddr.AppendText($"{oneMessage.SendChildren(selectedState)}\n");
+        }
+
+        private void buttonParent_Click(object sender, EventArgs e)
+        {
+            textBoxIpAddr.AppendText($"{oneMessage.SendParent(selectedState)}\n");
         }
     }
 }

@@ -135,6 +135,7 @@
             this.buttonChildren.TabIndex = 12;
             this.buttonChildren.Text = "Ученик";
             this.buttonChildren.UseVisualStyleBackColor = true;
+            this.buttonChildren.Click += new System.EventHandler(this.buttonChildren_Click);
             // 
             // buttonParent
             // 
@@ -145,6 +146,7 @@
             this.buttonParent.TabIndex = 11;
             this.buttonParent.Text = "Родитель";
             this.buttonParent.UseVisualStyleBackColor = true;
+            this.buttonParent.Click += new System.EventHandler(this.buttonParent_Click);
             // 
             // checkBoxGroup
             // 
